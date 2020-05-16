@@ -13,7 +13,7 @@ source:
     sha256: c331494130284d6360e68de21a5ce0092988b2e16f34594dc7445a3fc1029c13
 
 build:
-    number: 0
+    number: 1
     script: "{{ PYTHON }} -m pip install . --no-deps -vv"
     noarch: python
 
@@ -32,7 +32,7 @@ requirements:
         - pims >=0.3.0
         - numba
         - qtpy >=1.1
-        - matplotlib
+        - matplotlib-base
         - pywavelets >=0.3.0
 
 test:
