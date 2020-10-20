@@ -2,7 +2,8 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 {% set name = "sdt-python" %}
-{% set version = "14.4" %}
+{% set version = "15.1" %}
+{% set hash = "4ae156ffbc011b35084be6d1a73d971e802e6e41578677cca97f0e8736bc136e" %}
 
 package:
     name: {{ name }}
@@ -10,7 +11,7 @@ package:
 
 source:
     url: https://github.com/schuetzgroup/{{ name }}/archive/{{ version }}.tar.gz
-    sha256: 6bcca4da65196dbdf1e8e7e2264f1eb2c19bc9e6697e4658c8e56c4b169f47f7
+    sha256: {{ hash }}
 
 build:
     number: 0
@@ -22,24 +23,26 @@ requirements:
         - python
         - pip
     run:
-        - python
+        - python >=3.6
         - numpy >=1.10
         - pandas
         - pytables
-        - scipy >0.18
-        - tifffile >=0.14.0
+        - opencv
         - pyyaml
         - pims >=0.3.0
         - numba
         - qtpy >=1.1
         - matplotlib-base
         - pywavelets >=0.3.0
+        - scipy >0.18
+        - tifffile >=0.14.0
 
 test:
     requires:
         - pytest
         - trackpy
         - lmfit
+        - scikit-learn
     commands:
         - pytest -v tests
     source_files:
@@ -48,17 +51,16 @@ test:
         - sdt
         - sdt.brightness
         - sdt.changepoint
-        - sdt.chromatic
-        - sdt.exp_fit
+        - sdt.channel_reg
         - sdt.flatfield
         - sdt.fret
-        - sdt.gaussian_fit
         - sdt.helper
         - sdt.image
         - sdt.io
         - sdt.loc
         - sdt.motion
         - sdt.multicolor
+        - sdt.optimize
         - sdt.roi
         - sdt.sim
         - sdt.spatial
