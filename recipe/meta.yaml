@@ -1,16 +1,17 @@
 # SPDX-FileCopyrightText: 2020 Lukas Schrangl <lukas.schrangl@tuwien.ac.at>
 #
 # SPDX-License-Identifier: BSD-3-Clause
+
 {% set name = "sdt-python" %}
-{% set version = "15.2" %}
-{% set hash = "e1618ef74397e615b16c799b788f779a95103678c2f11721b1bb43594811330a" %}
+{% set version = "16.0" %}
+{% set hash = "b71c3ca146211d773874e315895ce9700bbbf829bade2473a81c1a243c20cbd6" %}
 
 package:
     name: {{ name }}
     version: {{ version }}
 
 source:
-    url: https://github.com/schuetzgroup/{{ name }}/archive/{{ version }}.tar.gz
+    url: https://github.com/schuetzgroup/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
     sha256: {{ hash }}
 
 build:
@@ -43,6 +44,7 @@ test:
         - trackpy
         - lmfit
         - scikit-learn
+        - imageio
     commands:
         - pytest -v tests
     source_files:
@@ -73,7 +75,9 @@ about:
         - LICENSES/CC-BY-4.0.txt
         - LICENSES/CC0-1.0.txt
         - LICENSES/LGPL-3.0-or-later.txt
+        - LICENSES/LicenseRef-Matplotlib-1.3.txt
         - LICENSES/MIT.txt
+        - sdt/gui/breeze-icons/COPYING-ICONS
     summary: "Tools for fluorescence microscopy data analysis"
     dev_url: https://github.com/schuetzgroup/sdt-python
     doc_url: https://schuetzgroup.github.io/sdt-python
