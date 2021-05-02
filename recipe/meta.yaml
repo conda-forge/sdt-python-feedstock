@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 {% set name = "sdt-python" %}
-{% set version = "16.0.2" %}
-{% set hash = "2d0e265a24458c9afe430d6bd5b70cb226ccad97b802557afd701382c87ce82a" %}
+{% set version = "16.1" %}
+{% set hash = "210ca43fdb9c6ea98eb3dfe7aa71ba92507ebfcd45dcea0fb025f6ea68a2be45" %}
 
 package:
     name: {{ name }}
@@ -24,7 +24,7 @@ requirements:
         - python
         - pip
     run:
-        - python >=3.6
+        - python >=3.7
         - numpy >=1.10
         - pandas
         - pytables
@@ -53,7 +53,6 @@ test:
         - sdt
         - sdt.brightness
         - sdt.changepoint
-        - sdt.channel_reg
         - sdt.flatfield
         - sdt.fret
         - sdt.helper
