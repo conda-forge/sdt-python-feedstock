@@ -40,6 +40,7 @@ requirements:
 
 test:
     requires:
+        - python <=3.9  # PIMS fails with 3.10
         - pytest
         - trackpy
         - lmfit
