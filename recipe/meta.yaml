@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 {% set name = "sdt-python" %}
-{% set version = "17.2" %}
-{% set hash = "b712bfe87af99a5bfb8043af497cda29dd1f60cf2e62437c112112e40a49f358" %}
+{% set version = "17.3" %}
+{% set hash = "5166f18b86f8e231b3395b8a81aafb1b6e3c94b43672387196c0bf9c69a3e44b" %}
 
 package:
     name: {{ name }}
@@ -30,7 +30,7 @@ requirements:
         - pytables
         - opencv
         - pyyaml
-        - pims >=0.3.0
+        - imageio
         - numba
         - qtpy >=1.1
         - matplotlib-base
@@ -40,12 +40,12 @@ requirements:
 
 test:
     requires:
-        - python <=3.9  # PIMS fails with 3.10
+        - python
         - pytest
         - trackpy
         - lmfit
         - scikit-learn
-        - imageio
+        - pims
     commands:
         - pytest -v tests
     source_files:
