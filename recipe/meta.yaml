@@ -13,6 +13,8 @@ package:
 source:
     url: https://github.com/schuetzgroup/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
     sha256: {{ hash }}
+    patches:
+        - test_tolerance.patch
 
 build:
     number: 1
