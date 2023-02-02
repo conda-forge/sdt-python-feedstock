@@ -13,9 +13,11 @@ package:
 source:
     url: https://github.com/schuetzgroup/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
     sha256: {{ hash }}
+    patches:
+        - test_tolerance.patch
 
 build:
-    number: 0
+    number: 1
     script: "{{ PYTHON }} -m pip install . --no-deps -vv"
     noarch: python
 
@@ -30,7 +32,7 @@ requirements:
         - pytables
         - opencv
         - pyyaml
-        - imageio
+        - imageio <2.22.2,>=2.18
         - numba
         - qtpy >=1.1
         - matplotlib-base
