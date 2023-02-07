@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 {% set name = "sdt-python" %}
-{% set version = "17.4" %}
-{% set hash = "3b717575f0a09ca86f704b2b6f0b9a1fb4eb3fde26c7c81818931a03bd2556f6" %}
+{% set version = "17.5" %}
+{% set hash = "c75e9fb75d5b22f23d82920c1f23f79df5b8aea34139e192a6467057bcde535b" %}
 
 package:
     name: {{ name }}
@@ -13,11 +13,9 @@ package:
 source:
     url: https://github.com/schuetzgroup/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
     sha256: {{ hash }}
-    patches:
-        - test_tolerance.patch
 
 build:
-    number: 1
+    number: 0
     script: "{{ PYTHON }} -m pip install . --no-deps -vv"
     noarch: python
 
