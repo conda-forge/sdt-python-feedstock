@@ -15,7 +15,7 @@ source:
     sha256: {{ hash }}
 
 build:
-    number: 0
+    number: 1
     script: "{{ PYTHON }} -m pip install . --no-deps -vv"
     noarch: python
 
@@ -24,7 +24,7 @@ requirements:
         - python
         - pip
     run:
-        - python >=3.7
+        - python >=3.9
         - numpy >=1.10
         - pandas
         - pytables
@@ -32,7 +32,7 @@ requirements:
         - pyyaml
         - imageio <2.22.2,>=2.18
         - numba
-        - qtpy >=1.1
+        - pyqt
         - matplotlib-base
         - pywavelets >=0.3.0
         - scipy >0.18
