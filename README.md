@@ -1,11 +1,11 @@
-About sdt-python
-================
+About sdt-python-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sdt-python-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/schuetzgroup/sdt-python
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sdt-python-feedstock/blob/main/LICENSE.txt)
 
 Summary: Tools for fluorescence microscopy data analysis
 
