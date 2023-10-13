@@ -7,81 +7,81 @@
 {% set hash = "6d3518e8c690ddaccba23604e6f755ada0213f13efd3cb1bc47a9b1d9f4bac03" %}
 
 package:
-    name: {{ name }}
-    version: {{ version }}
+  name: {{ name }}
+  version: {{ version }}
 
 source:
-    url: https://github.com/schuetzgroup/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-    sha256: {{ hash }}
+  url: https://github.com/schuetzgroup/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ hash }}
 
 build:
-    number: 0
-    script: "{{ PYTHON }} -m pip install . --no-deps -vv"
-    noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  noarch: python
 
 requirements:
-    host:
-        - python
-        - pip
-    run:
-        - python >=3.9
-        - numpy >=1.10
-        - pandas
-        - pytables
-        - opencv
-        - pyyaml
-        - imageio >=2.29
-        - numba
-        - pyqt
-        - matplotlib-base
-        - pywavelets >=0.3.0
-        - scipy >0.18
-        - tifffile >=0.14.0
-        - lazy_loader
+  host:
+    - python
+    - pip
+  run:
+    - python >=3.9
+    - numpy >=1.10
+    - pandas
+    - pytables
+    - opencv
+    - pyyaml
+    - imageio >=2.29
+    - numba
+    - pyqt
+    - matplotlib-base
+    - pywavelets >=0.3.0
+    - scipy >0.18
+    - tifffile >=0.14.0
+    - lazy_loader
 
 test:
-    requires:
-        - python
-        - pytest
-        - trackpy
-        - lmfit
-        - scikit-learn
-        - pims
-    commands:
-        - pytest -v tests
-    source_files:
-        - tests
-    imports:
-        - sdt
-        - sdt.brightness
-        - sdt.changepoint
-        - sdt.flatfield
-        - sdt.fret
-        - sdt.helper
-        - sdt.image
-        - sdt.io
-        - sdt.loc
-        - sdt.motion
-        - sdt.multicolor
-        - sdt.optimize
-        - sdt.roi
-        - sdt.sim
-        - sdt.spatial
+  requires:
+    - python
+    - pytest
+    - trackpy
+    - lmfit
+    - scikit-learn
+    - pims
+  commands:
+    - pytest -v tests
+  source_files:
+    - tests
+  imports:
+    - sdt
+    - sdt.brightness
+    - sdt.changepoint
+    - sdt.flatfield
+    - sdt.fret
+    - sdt.helper
+    - sdt.image
+    - sdt.io
+    - sdt.loc
+    - sdt.motion
+    - sdt.multicolor
+    - sdt.optimize
+    - sdt.roi
+    - sdt.sim
+    - sdt.spatial
 
 about:
-    home: https://github.com/schuetzgroup/sdt-python
-    license: BSD-3-Clause
-    license_file:
-        - LICENSES/BSD-3-Clause.txt
-        - LICENSES/CC-BY-4.0.txt
-        - LICENSES/CC0-1.0.txt
-        - LICENSES/LGPL-3.0-or-later.txt
-        - LICENSES/MIT.txt
-        - sdt/gui/breeze-icons/COPYING-ICONS
-    summary: "Tools for fluorescence microscopy data analysis"
-    dev_url: https://github.com/schuetzgroup/sdt-python
-    doc_url: https://schuetzgroup.github.io/sdt-python
+  home: https://github.com/schuetzgroup/sdt-python
+  license: BSD-3-Clause
+  license_file:
+    - LICENSES/BSD-3-Clause.txt
+    - LICENSES/CC-BY-4.0.txt
+    - LICENSES/CC0-1.0.txt
+    - LICENSES/LGPL-3.0-or-later.txt
+    - LICENSES/MIT.txt
+    - sdt/gui/breeze-icons/COPYING-ICONS
+  summary: "Tools for fluorescence microscopy data analysis"
+  dev_url: https://github.com/schuetzgroup/sdt-python
+  doc_url: https://schuetzgroup.github.io/sdt-python
 
 extra:
-    recipe-maintainers:
-        - lschr
+  recipe-maintainers:
+    - lschr
