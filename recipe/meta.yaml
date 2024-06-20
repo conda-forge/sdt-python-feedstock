@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 {% set name = "sdt-python" %}
-{% set version = "18.2" %}
-{% set hash = "6d3518e8c690ddaccba23604e6f755ada0213f13efd3cb1bc47a9b1d9f4bac03" %}
+{% set version = "18.3" %}
+{% set hash = "be44959e792278a071501c1cb7eff55b75c9e776d6d6edcee7d88fcc9ed64fd9" %}
 
 package:
     name: {{ name }}
@@ -34,9 +34,8 @@ requirements:
         - numba
         - pyqt
         - matplotlib-base
-        - pywavelets >=0.3.0
         - scipy >0.18
-        - tifffile >=0.14.0
+        - tifffile >=2022.2.2
         - lazy_loader
 
 test:
@@ -47,8 +46,9 @@ test:
         - lmfit
         - scikit-learn
         - pims
+        - pywavelets >=0.3.0
     commands:
-        - pytest -v tests
+        - pytest -v --ignore=tests/test_gui/ tests  # ignore GUI tests since they segfault on Linux
     source_files:
         - tests
     imports:
@@ -75,7 +75,6 @@ about:
         - LICENSES/BSD-3-Clause.txt
         - LICENSES/CC-BY-4.0.txt
         - LICENSES/CC0-1.0.txt
-        - LICENSES/LGPL-3.0-or-later.txt
         - LICENSES/MIT.txt
         - sdt/gui/breeze-icons/COPYING-ICONS
     summary: "Tools for fluorescence microscopy data analysis"
