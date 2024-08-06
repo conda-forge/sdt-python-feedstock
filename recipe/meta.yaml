@@ -3,15 +3,15 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 {% set name = "sdt-python" %}
-{% set version = "18.3" %}
-{% set hash = "be44959e792278a071501c1cb7eff55b75c9e776d6d6edcee7d88fcc9ed64fd9" %}
+{% set version = "19.0.0" %}
+{% set hash = "fdc48ae4f34b77f509d5952eeb3300d289697349d784edc05af397fd2bd53898" %}
 
 package:
     name: {{ name }}
     version: {{ version }}
 
 source:
-    url: https://github.com/schuetzgroup/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
+    url: https://github.com/schuetzgroup/{{ name }}/releases/download/{{ version }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
     sha256: {{ hash }}
 
 build:
@@ -23,6 +23,7 @@ requirements:
     host:
         - python
         - pip
+        - hatch
     run:
         - python >=3.9
         - numpy >=1.10
