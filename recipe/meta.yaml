@@ -15,17 +15,17 @@ source:
     sha256: {{ hash }}
 
 build:
-    number: 0
+    number: 1
     script: "{{ PYTHON }} -m pip install . --no-deps -vv"
     noarch: python
 
 requirements:
     host:
-        - python
+        - python {{ python_min }}
         - pip
         - hatch
     run:
-        - python >=3.9
+        - python >={{ python_min }}
         - numpy >=1.10
         - pandas
         - pytables
@@ -41,7 +41,7 @@ requirements:
 
 test:
     requires:
-        - python
+        - python {{ python_min }}
         - pytest
         - trackpy
         - lmfit
