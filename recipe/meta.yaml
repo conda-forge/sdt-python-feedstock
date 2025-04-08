@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 {% set name = "sdt-python" %}
-{% set version = "19.0.3" %}
-{% set hash = "1a44b67d87d973f27bc63139de9f9e1b2a0ca8492027208602648e7645d98137" %}
+{% set version = "20.0.0" %}
+{% set hash = "4653aadc6fd17ffab2c8e3f36a07c7a15df6f5168146bc14cadb3867156ce86a" %}
 
 package:
     name: {{ name }}
@@ -15,7 +15,7 @@ source:
     sha256: {{ hash }}
 
 build:
-    number: 1
+    number: 0
     script: "{{ PYTHON }} -m pip install . --no-deps -vv"
     noarch: python
 
@@ -23,12 +23,12 @@ requirements:
     host:
         - python {{ python_min }}
         - pip
-        - hatch
+        - hatchling
     run:
         - python >={{ python_min }}
-        - numpy >=1.10
-        - pandas
-        - pytables
+        - numpy >=2.1
+        - pandas >=2.2.3
+        - pytables >=3.10
         - opencv
         - pyyaml
         - imageio >=2.29
