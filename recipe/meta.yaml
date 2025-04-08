@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 {% set name = "sdt-python" %}
-{% set version = "19.0.1" %}
-{% set hash = "0310ef1df5304e17de46c69c25bc4886135ff399496f0a54bae320a9b3e36735" %}
+{% set version = "19.0.3" %}
+{% set hash = "1a44b67d87d973f27bc63139de9f9e1b2a0ca8492027208602648e7645d98137" %}
 
 package:
     name: {{ name }}
