@@ -55,7 +55,7 @@ tests:
         - pywavelets >=0.3.0
     files:
       source:
-        - tests
+        - tests/  # trailing slash seems necessary to copy directory
   - python:
       imports:
         - sdt
