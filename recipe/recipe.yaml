@@ -6,6 +6,7 @@ context:
   name: sdt-python
   version: "20.0.0"
   hash: "4653aadc6fd17ffab2c8e3f36a07c7a15df6f5168146bc14cadb3867156ce86a"
+  python_min: "3.10"
 
 package:
   name: ${{ name }}
