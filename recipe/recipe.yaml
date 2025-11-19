@@ -4,8 +4,8 @@
 
 context:
   name: sdt-python
-  version: "20.0.0"
-  hash: "4653aadc6fd17ffab2c8e3f36a07c7a15df6f5168146bc14cadb3867156ce86a"
+  version: "20.1.0"
+  hash: "71cf240b2b71d319b7c465aae2ccc087856b711f1901fe3e41a054ed9e5113af"
   python_min: "3.10"
 
 package:
@@ -43,7 +43,7 @@ requirements:
 
 tests:
   - script:
-    - pytest -v --ignore=tests/test_gui/ tests  # ignore GUI tests since they segfault on Linux
+      - pytest -v --ignore=tests/test_gui/ tests # ignore GUI tests since they segfault on Linux
     requirements:
       run:
         - python ${{ python_min }}.*
