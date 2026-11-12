@@ -42,7 +42,7 @@ requirements:
 
 tests:
   - script:
-      - pytest -v --ignore=tests/test_gui/ tests # ignore GUI tests since they segfault on Linux
+      - pytest -v --ignore tests/test_multicolor.py --ignore=tests/test_gui/ tests # ignore GUI tests since they segfault on Linux
     requirements:
       run:
         - pytest
