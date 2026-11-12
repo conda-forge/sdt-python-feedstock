@@ -3,24 +3,25 @@ About sdt-python-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/sdt-python-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/schuetzgroup/sdt-python
+Home: https://codeberg.org/boku-bphy/sdt-python
 
 Package license: BSD-3-Clause
 
 Summary: Tools for fluorescence microscopy data analysis
 
-Development: https://github.com/schuetzgroup/sdt-python
+Development: https://codeberg.org/boku-bphy/sdt-python
 
-Documentation: https://schuetzgroup.github.io/sdt-python
+Documentation: https://boku-bphy.codeberg.page/sdt-python
 
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=9613&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/sdt-python-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/sdt-python-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/sdt-python-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -43,31 +44,73 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `sdt-python` can be installed with `conda`:
+How to use
+----------
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda install sdt-python
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba install sdt-python
 ```
 
-It is possible to list all of the versions of `sdt-python` available on your platform with `conda`:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+# for adding to your local project
+pixi add sdt-python
+# for installing globally
+pixi global install sdt-python
+```
+
+</details>
+
+Search package versions
+-----------------------
+
+It is possible to list all of the versions of `sdt-python` available on your platform:
+
+<details>
+<summary>With conda</summary>
 
 ```
 conda search sdt-python --channel conda-forge
 ```
 
-or with `mamba`:
+</details>
+
+<details>
+<summary>With mamba</summary>
 
 ```
 mamba search sdt-python --channel conda-forge
 ```
 
-Alternatively, `mamba repoquery` may provide more information:
+</details>
+
+<details>
+<summary>With pixi</summary>
+
+```
+pixi search sdt-python --channel conda-forge
+```
+
+</details>
+
+<details>
+<summary>With mamba repoquery, which may provide more information</summary>
 
 ```
 # Search all versions available on your platform:
@@ -79,6 +122,9 @@ mamba repoquery whoneeds sdt-python --channel conda-forge
 # List dependencies of `sdt-python`:
 mamba repoquery depends sdt-python --channel conda-forge
 ```
+
+</details>
+
 
 
 About conda-forge
@@ -95,9 +141,7 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
-[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+[Azure](https://azure.microsoft.com/en-us/services/devops/) and [GitHub](https://github.com/)
 it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
