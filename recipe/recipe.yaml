@@ -6,7 +6,6 @@ context:
   name: sdt-python
   version: "20.2.0"
   hash: "130b2d4da113b0bc9e94051f99e74f3ae386f0cefcf65a8c2f3cc2480f545818"
-  python_min: "3.11"
 
 package:
   name: ${{ name }}
@@ -46,7 +45,6 @@ tests:
       - pytest -v --ignore=tests/test_gui/ tests # ignore GUI tests since they segfault on Linux
     requirements:
       run:
-        - python ${{ python_min }}.*
         - pytest
         - trackpy
         - lmfit
