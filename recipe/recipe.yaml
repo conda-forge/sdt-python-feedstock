@@ -45,6 +45,7 @@ tests:
       - pytest -v --ignore tests/test_multicolor.py --ignore=tests/test_gui/ tests # ignore GUI tests since they segfault on Linux
     requirements:
       run:
+        - python ${{ python_min }}.*
         - pytest
         - trackpy
         - lmfit
@@ -55,6 +56,9 @@ tests:
       source:
         - tests/  # trailing slash seems necessary to copy directory
   - python:
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
       imports:
         - sdt
         - sdt.brightness
